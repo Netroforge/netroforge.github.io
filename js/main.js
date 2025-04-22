@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const turboEnabled = localStorage.getItem('turboMode') === 'true';
     if (turboEnabled) {
         body.classList.add('turbo-mode');
+        body.setAttribute('data-crt-effect', 'true');
         if (turboToggle) turboToggle.checked = true;
     }
 
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (turboToggle) {
         turboToggle.addEventListener('change', function () {
             body.classList.toggle('turbo-mode');
+            body.setAttribute('data-crt-effect', this.checked);
             localStorage.setItem('turboMode', this.checked);
         });
     }
